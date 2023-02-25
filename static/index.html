@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Yoo</title>
+    
+</head>
+
+<body>
+    <h1>test</h1>
+    <div id="wgpu"></div>
+    <script type="module">
+        window.onerror = function(msg, url, linenumber) {
+    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+}
+        import init from "../hqf/pkg/hqf.js";
+        window.addEventListener("load", () => {
+           // init();
+            init().then(()=>{
+                alert("wasssm");
+            });
+        });
+    </script>
+</body>
+
+</html>
