@@ -1,19 +1,20 @@
+
 <html>
 
 <head>
     <title>Yoo</title>
     
-</head>
+<base href="."></head>
 
 <body>
     <h1>test</h1>
-    <div id="wgpu"></div>
+    <div id="canvas"></div>
     <script type="module">
         window.onerror = function(msg, url, linenumber) {
     alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
     return true;
 }
-        import init from "../hqf/pkg/hqf.js";
+        import init from './pkg/hqf.js';
         window.addEventListener("load", () => {
            // init();
             init().then(()=>{
@@ -22,5 +23,3 @@
         });
     </script>
 </body>
-
-</html>

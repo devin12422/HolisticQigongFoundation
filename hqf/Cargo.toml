@@ -2,32 +2,30 @@
 name = "hqf"
 version = "0.1.0"
 edition = "2021"
-resolver = "2"
+
 [lib]
-crate-type = ["cdylib","rlib"]
-
-
-[[bin]]
-name = "pvz"
-path = "src/main.rs"
+crate-type=["cdylib","rlib"]
 
 [dependencies]
-bytemuck = {version = "1.13.0", features = ["derive"] }
-cfg-if = "1.0.0"
-env_logger = "0.10.0"
-log = "0.4.17"
-pollster = "0.3.0"
-wgpu = "0.15.1"
-winit = "0.28.1"
 
-[target.'cfg(target_arch = "wasm32")'.dependencies]
+tokio = { version = "1", features = ["sync","macros","io-util","rt","time"] }
+reverence = {git = "https://github.com/devin12422/reverence"}
+wasm-bindgen = "0.2.84"
 console_error_panic_hook = "0.1.6"
+wgpu = {version = "0.15.0", features=["webgl"]}
 console_log = "0.2.0"
-wgpu = { version = "0.15.1", features = ["webgl"]}
-wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4.30"
-web-sys = { version = "0.3", features = [
+bytemuck = {version="1.13.0",features=["derive"]}
+cfg-if = "1"
+env_logger = "0.10.0"
+futures = "0.3.27"
+log = "0.4.17"
+pollster = "0.3.0" #To be removed in favor of tokio
+raw-window-handle = "0.5.1"
+winit = "0.27.5"
+web-sys = { version = "0.3.53", features = [
     "Document",
     "Window",
     "Element",
 ]}
+instant = "0.1.12"
